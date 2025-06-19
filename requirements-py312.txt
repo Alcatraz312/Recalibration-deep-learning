@@ -33,6 +33,7 @@ pure_eval==0.2.3
 pyerfa==2.0.1.5
 Pygments==2.19.1
 pyparsing==3.2.3
+pyreadstat==1.2.9
 python-dateutil==2.9.0.post0
 pytz==2025.2
 PyYAML==6.0.2

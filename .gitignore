@@ -1,5 +1,6 @@
 .env
 *.sav
-old_env
-legacy_env
-new_env
+.venv37
+.venv36
+venv27
+
