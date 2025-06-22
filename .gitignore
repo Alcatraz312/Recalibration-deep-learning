@@ -1,6 +1,5 @@
 .env
 *.sav
-.venv37
 .venv36
 venv27
 
