@@ -33,6 +33,9 @@ pure_eval==0.2.3
 pyerfa==2.0.1.5
 Pygments==2.19.1
 pyparsing==3.2.3
+PyQt6==6.9.1
+PyQt6-Qt6==6.9.1
+PyQt6_sip==13.10.2
 pyreadstat==1.2.9
 python-dateutil==2.9.0.post0
 pytz==2025.2
