@@ -63,11 +63,11 @@ def preprocess(star_path):
 
         return final_wavelength, final_flux
     
-wavelength, flux = preprocess("./FITS_data/5750.fits")
+# wavelength, flux = preprocess("./FITS_data/5750.fits")
 
-plt.plot(wavelength, flux)
+# plt.plot(wavelength, flux)
 
-plt.show()
+# plt.show()
     
 
     
