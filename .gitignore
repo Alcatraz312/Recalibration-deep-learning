@@ -1,4 +1,5 @@
 *.sav
 .env
 .env27
-*.npz
+src/preprocessing/*.npz
+
