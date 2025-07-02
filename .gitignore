@@ -1,3 +1,4 @@
 *.sav
 .env
 .env27
+*.npz
