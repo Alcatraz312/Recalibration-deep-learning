@@ -2,3 +2,5 @@
 .env
 .env27
 src/preprocessing/*.npz
+*__pycache__
+
