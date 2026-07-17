@@ -64,6 +64,7 @@ def training_step(model, batch, optimizer, device, beta):
     )
 
     loss.backward()   # backpropagate gradients
+    torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)      # gradient clipping
     optimizer.step()  # update model parameters
 
     return components
@@ -235,7 +236,22 @@ def train(model, train_loader, val_loader, batch_size, n_epochs=50, lr=3e-3, bet
 
     exp.end()  # close out the Comet ML experiment
 
-    return exp
+    final_metrics = {
+        "batch_size": batch_size,
+        "lr": lr,
+        "beta": beta,
+        "seed": seed,
+        "epochs_trained": n_epochs,
+        "final_train_loss": train_avg["loss"],
+        "final_train_recon": train_avg["recon_loss"],
+        "final_train_kl": train_avg["kl"],
+        "final_val_loss": val_avg["loss"],
+        "final_val_recon": val_avg["recon_loss"],
+        "final_val_kl": val_avg["kl"],
+    }
+
+    return exp, final_metrics
+
 
 
 def set_seed(seed=42):
