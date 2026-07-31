@@ -80,6 +80,9 @@ class VariationalAutoencoder(nn.Module):
     def reconstruction_loss(self, x, x_hat):
 
         log_sigma = torch.clamp(self.log_sigma_recon, -10, 5)
+
+        self.last_log_sigma = log_sigma.detach()   # stash the clamped value for external logging
+
         var       = torch.exp(2 * log_sigma)
         nll = 0.5 * torch.mean(
             2 * log_sigma + (x - x_hat)**2 / var, dim=1

@@ -32,7 +32,7 @@ def main():
     print(f"Data type : {type(train_loader)}")
 
     
-    lr_list = [1e-2, 1e-3, 3e-3, 3e-4]     # lr list for lr sweep
+    lr_list = [1e-3, 3e-3, 3e-4]     # lr list for lr sweep
 
     for lr in lr_list:
 
@@ -45,8 +45,8 @@ def main():
             batch_size= args.batch_size, n_epochs= args.max_epochs, lr = lr, beta = args.beta, seed = args.seed)
         
         update_log(
-            done=[f"Running Learning rate sweep for learning rate = {lr}, Trained VAE on MILES spectra for {args.max_epochs} epochs (batch_size={args.batch_size}, lr={args.lr})"],
-            next_steps=["Review reconstruction quality", "Proceed to CFLIB latent transfer step"],
+            done=[f"Running Learning rate sweep for learning rate = {lr}, Trained VAE on MILES spectra for {args.max_epochs} epochs (batch_size={args.batch_size}, lr={args.lr}) with sigma of reconstruction monitoring on"],
+            next_steps=["Batch size sweep"],
             metrics=final_metrics
             )
 

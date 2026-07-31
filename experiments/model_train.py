@@ -221,6 +221,11 @@ def train(model, train_loader, val_loader, batch_size, n_epochs=50, lr=3e-3, bet
         track_losses["val_loss"].append(val_avg["loss"])
 
         # log this epoch's metrics to Comet ML
+
+        clamped_log_sigma = model.last_log_sigma.item()
+        exp.log_metric("sigma/log_sigma_recon_clamped", clamped_log_sigma, epoch=epochs)
+        exp.log_metric("sigma/recon", torch.exp(model.last_log_sigma).item(), epoch=epochs)
+
         exp.log_metrics(
             {
                 "Train/Loss": train_avg["loss"],
@@ -251,7 +256,6 @@ def train(model, train_loader, val_loader, batch_size, n_epochs=50, lr=3e-3, bet
     }
 
     return exp, final_metrics
-
 
 
 def set_seed(seed=42):

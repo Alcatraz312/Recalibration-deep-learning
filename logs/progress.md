@@ -162,3 +162,80 @@ recalibrate them against the MILES reference.
 | final_val_loss | 0.07077 |
 | final_val_recon | 0.07059 |
 | final_val_kl | 0.00018 |
+
+## 2026-07-31 16:01
+
+**Done:**
+- Running Learning rate sweep for learning rate = 0.001, Trained VAE on MILES spectra for 50 epochs (batch_size=200, lr=0.003) with sigma of reconstruction monitoring on
+
+**Next:**
+- Batch size sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 200 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | 0.01184 |
+| final_train_recon | 0.01184 |
+| final_train_kl | 0.00001 |
+| final_val_loss | 0.01489 |
+| final_val_recon | 0.01488 |
+| final_val_kl | 0.00001 |
+
+## 2026-07-31 16:01
+
+**Done:**
+- Running Learning rate sweep for learning rate = 0.003, Trained VAE on MILES spectra for 50 epochs (batch_size=200, lr=0.003) with sigma of reconstruction monitoring on
+
+**Next:**
+- Batch size sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 200 |
+| lr | 0.00300 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | nan |
+| final_train_recon | nan |
+| final_train_kl | nan |
+| final_val_loss | nan |
+| final_val_recon | nan |
+| final_val_kl | nan |
+
+## 2026-07-31 16:01
+
+**Done:**
+- Running Learning rate sweep for learning rate = 0.0003, Trained VAE on MILES spectra for 50 epochs (batch_size=200, lr=0.003) with sigma of reconstruction monitoring on
+
+**Next:**
+- Batch size sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 200 |
+| lr | 0.00030 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | 0.06435 |
+| final_train_recon | 0.06428 |
+| final_train_kl | 0.00007 |
+| final_val_loss | 0.07175 |
+| final_val_recon | 0.07169 |
+| final_val_kl | 0.00006 |
+
+**Best Learning rate in the experiment : 0.001**:
+- Best KL and reconstruction uncertainty collapse
+- Better convergence value of reconstruction loss
+
