@@ -441,5 +441,5 @@ recalibrate them against the MILES reference.
 - All choices of latent dimensions perform better, however the latent dimension of 128 performs a slightly better as the uncertainty converges the most in that choice.
 - The difference is not very significant between the loss curves of each latent dimension choices. We will stick to 128.
 
-![alt text](pictures/image-1.png)
+![alt text](pictures/image.png)
 ![alt text](pictures/image-1.png)
