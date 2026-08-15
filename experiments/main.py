@@ -17,8 +17,8 @@ flux = np.load("/home/arbiter/projects/Recalibration-deep-learning/data/MILES_sp
 def main():
     parser = argparse.ArgumentParser(prog = "Trainer")
     parser.add_argument("--max_epochs", type = int, default = "50")
-    parser.add_argument("--lr", type = float, default = "3e-3")
-    parser.add_argument("--batch_size", type = int, default = "200")
+    parser.add_argument("--lr", type = float, default = "1e-3")
+    parser.add_argument("--batch_size", type = int, default = "100")
     parser.add_argument("--beta", type = float, default = "1" )
     parser.add_argument("--seed", type = int, default = "42")
     parser.add_argument("--latent_dim", type = int, default = "128")
@@ -32,23 +32,20 @@ def main():
     print(f"Data type : {type(train_loader)}")
 
     
-    lr_list = [1e-3, 3e-3, 3e-4]     # lr list for lr sweep
+    
+    model = VariationalAutoencoder(
+    input_dim= len(flux[0]),
+    latent_dim = args.latent_dim
+    )
 
-    for lr in lr_list:
+    exp, final_metrics = train(model= model, train_loader= train_loader, val_loader= val_loader, 
+        batch_size= args.batch_size, n_epochs= args.max_epochs, lr = args.lr, beta = args.beta, seed = args.seed)
 
-        model = VariationalAutoencoder(
-        input_dim= len(flux[0]),
-        latent_dim = args.latent_dim
+    update_log(
+        done=[f"Running latent dimension sweep, current chosen latent dimension is {args.latent_dim}"],
+        next_steps=["MILES Transfer"],
+        metrics=final_metrics
         )
-
-        exp, final_metrics = train(model= model, train_loader= train_loader, val_loader= val_loader, 
-            batch_size= args.batch_size, n_epochs= args.max_epochs, lr = lr, beta = args.beta, seed = args.seed)
-        
-        update_log(
-            done=[f"Running Learning rate sweep for learning rate = {lr}, Trained VAE on MILES spectra for {args.max_epochs} epochs (batch_size={args.batch_size}, lr={args.lr}) with sigma of reconstruction monitoring on"],
-            next_steps=["Batch size sweep"],
-            metrics=final_metrics
-            )
 
 if __name__ == "__main__":
     main()

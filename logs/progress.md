@@ -239,3 +239,207 @@ recalibrate them against the MILES reference.
 - Best KL and reconstruction uncertainty collapse
 - Better convergence value of reconstruction loss
 
+
+## 2026-07-31 17:07
+
+**Done:**
+- Running batch size sweep for batch size = 50
+
+**Next:**
+- latent dimension sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 50 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | 0.01184 |
+| final_train_recon | 0.01184 |
+| final_train_kl | 0.00001 |
+| final_val_loss | 0.01489 |
+| final_val_recon | 0.01488 |
+| final_val_kl | 0.00001 |
+
+## 2026-07-31 17:07
+
+**Done:**
+- Running batch size sweep for batch size = 100
+
+**Next:**
+- latent dimension sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 100 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | 0.00042 |
+| final_train_recon | 0.00041 |
+| final_train_kl | 0.00001 |
+| final_val_loss | 0.00857 |
+| final_val_recon | 0.00856 |
+| final_val_kl | 0.00001 |
+
+## 2026-07-31 17:08
+
+**Done:**
+- Running batch size sweep for batch size = 200
+
+**Next:**
+- latent dimension sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 200 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | 0.00424 |
+| final_train_recon | 0.00423 |
+| final_train_kl | 0.00000 |
+| final_val_loss | 0.01241 |
+| final_val_recon | 0.01240 |
+| final_val_kl | 0.00000 |
+
+## 2026-07-31 17:08
+
+**Done:**
+- Running batch size sweep for batch size = 250
+
+**Next:**
+- latent dimension sweep
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 250 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | -0.02872 |
+| final_train_recon | -0.02872 |
+| final_train_kl | 0.00000 |
+| final_val_loss | 0.01215 |
+| final_val_recon | 0.01215 |
+| final_val_kl | 0.00000 |
+
+**Batch size of 100 performs the best in all. Reason maybe, larger batch size take more number of epochs to converge since variance per batch is more ? However batch size of 50 which is the smallest performs worse than that of 100**
+
+**Upnext latent dimension sweep**
+
+
+## 2026-08-15 15:28
+
+**Done:**
+- Running latent dimension sweep, current chosen latent dimension is 32
+
+**Next:**
+- MILES Transfer
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 100 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | -0.02420 |
+| final_train_recon | -0.02422 |
+| final_train_kl | 0.00002 |
+| final_val_loss | 0.00911 |
+| final_val_recon | 0.00909 |
+| final_val_kl | 0.00002 |
+
+## 2026-08-15 15:28
+
+**Done:**
+- Running latent dimension sweep, current chosen latent dimension is 64
+
+**Next:**
+- MILES Transfer
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 100 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | 0.00950 |
+| final_train_recon | 0.00948 |
+| final_train_kl | 0.00001 |
+| final_val_loss | 0.00826 |
+| final_val_recon | 0.00825 |
+| final_val_kl | 0.00002 |
+
+## 2026-08-15 15:28
+
+**Done:**
+- Running latent dimension sweep, current chosen latent dimension is 128
+
+**Next:**
+- MILES Transfer
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 100 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | -0.02588 |
+| final_train_recon | -0.02588 |
+| final_train_kl | 0.00000 |
+| final_val_loss | 0.00883 |
+| final_val_recon | 0.00882 |
+| final_val_kl | 0.00000 |
+
+## 2026-08-15 15:28
+
+**Done:**
+- Running latent dimension sweep, current chosen latent dimension is 200
+
+**Next:**
+- MILES Transfer
+
+**Metrics:**
+
+| Key | Value |
+|-----|-------|
+| batch_size | 100 |
+| lr | 0.00100 |
+| beta | 1.00000 |
+| seed | 42 |
+| epochs_trained | 50 |
+| final_train_loss | -0.02420 |
+| final_train_recon | -0.02421 |
+| final_train_kl | 0.00000 |
+| final_val_loss | 0.00960 |
+| final_val_recon | 0.00959 |
+| final_val_kl | 0.00000 |
+
+**Done**
+- All choices of latent dimensions perform better, however the latent dimension of 128 performs a slightly better as the uncertainty converges the most in that choice.
+- The difference is not very significant between the loss curves of each latent dimension choices. We will stick to 128.
+
+![alt text](pictures/image-1.png)
+![alt text](pictures/image-1.png)

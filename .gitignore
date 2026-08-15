@@ -3,4 +3,5 @@
 .env27
 src/preprocessing/*.npz
 *__pycache__
-
+*.png
+pictures
